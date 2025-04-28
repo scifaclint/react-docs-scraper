@@ -1,0 +1,16 @@
+{
+  "title": "Introduction",
+  "id": "intro",
+  "mainUrl": "",
+  "sections": [
+    {
+      "title": "Overview",
+      "contents": [
+        "Welcome",
+        "This is the overview.",
+        "Feature 1",
+        "Feature 2"
+      ]
+    }
+  ]
+}

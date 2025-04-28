@@ -1,0 +1,680 @@
+[
+    {
+        "title": "API Reference",
+        "id": "introduction",
+        "mainUrl": "/docs/api-reference/introduction",
+        "sections": [
+            {
+                "title": "API Interaction",
+                "id": "api-interaction",
+                "contents": [
+                    "You can interact with the API through HTTP or Websocket requests from any language, via our official Python bindings or our official Node.js libraries.",
+                    "To install the official Python bindings, run the following command:",
+                    "To install the official Node.js library, run the following command in your Node.js project directory:"
+                ]
+            },
+            {
+                "title": "Python SDK",
+                "id": "python-sdk-install",
+                "contents": [
+                    "To install the official Python bindings, run the following command:"
+                ]
+            },
+            {
+                "title": "Node.js SDK",
+                "id": "nodejs-sdk-install",
+                "contents": [
+                    "To install the official Node.js library, run the following command in your Node.js project directory:"
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Authentication",
+        "id": "authentication",
+        "mainUrl": "/docs/api-reference/authentication",
+        "sections": [
+            {
+                "title": "API Keys",
+                "id": "api-keys",
+                "contents": [
+                    "API Keys",
+                    "Authenticate using API keys scoped to projects (recommended) or legacy user keys.",
+                    "Project keys:Restricted to a single project (secure by default).",
+                    "User keys:Access all projects/organizations (deprecated; migrate to project keys)."
+                ]
+            },
+            {
+                "title": "Obtain Key",
+                "id": "obtain-api-key",
+                "contents": [
+                    "You can obtain an API key byregistering for an accountand navigating to the API Keys section in your dashboard."
+                ]
+            },
+            {
+                "title": "Authenticated Requests",
+                "id": "authenticated-requests",
+                "contents": [
+                    "Making authenticated requests",
+                    "Authentication to the API is performed via HTTP Bearer authentication. Provide your API key as the Bearer token value in the Authorization header."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "API Authentication ",
+        "id": "authentication",
+        "mainUrl": "/docs/api-reference/authentication",
+        "sections": [
+            {
+                "title": "API Authentication Using Python",
+                "id": "auth-pythonSDK",
+                "contents": [
+                    "Using the Alle-AI Python Package",
+                    "Example of initializing the Alle-AI client in Python:"
+                ]
+            },
+            {
+                "title": "API Authentication Using Node.js",
+                "id": "auth-nodejs",
+                "contents": [
+                    "Using the Alle-AI Node.js Package",
+                    "Example of initializing the Alle-AI client in Node.js:"
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Streaming",
+        "id": "streaming",
+        "mainUrl": "/docs/api-reference/streaming",
+        "sections": [
+            {
+                "title": "Streaming Overview",
+                "id": "streaming-overview",
+                "contents": [
+                    "The Alleai API provides the ability to stream responses back to a client in order to allow partial results for certain requests. To achieve this, we follow the Server-sent events standard. Our official Node and Python libraries include helpers to make parsing these events simpler."
+                ]
+            },
+            {
+                "title": "Chat Completions",
+                "id": "chat-completions",
+                "contents": [
+                    "Streaming is supported for both the Chat Completions API and the Assistants API. This section focuses on how streaming works for Chat Completions. Learn more about how streaming works in the Assistants API here.",
+                    "Streaming in Python",
+                    "In Python, a streaming request looks like:"
+                ]
+            },
+            {
+                "title": "Node.js Streaming",
+                "id": "nodejs-streaming",
+                "contents": [
+                    "Streaming in Node.js / TypeScript",
+                    "In Node.js / TypeScript, a streaming request looks like:"
+                ]
+            },
+            {
+                "title": "Best Practices",
+                "id": "best-practices",
+                "contents": [
+                    "Best Practices for Streaming",
+                    "When working with streaming in the Alleai API, consider the following best practices to ensure a smooth and efficient implementation:"
+                ]
+            },
+            {
+                "title": "Streaming Tips",
+                "id": "streaming-tips",
+                "contents": [
+                    "Use Client Libraries:Always prefer using the official Alleai client libraries for Python and Node.js, as they handle Server-sent events parsing and connection management for you.",
+                    "Handle Errors Gracefully:Streaming connections can fail due to network issues or timeouts. Implement retry logic and error handling to ensure robustness.",
+                    "Monitor Rate Limits:Streaming requests count toward your API rate limits. Monitor your usage to avoid exceeding limits and being throttled.",
+                    "Optimize for Latency:Streaming is ideal for reducing perceived latency in applications. Ensure your client-side logic is optimized to process and display chunks as they arrive."
+                ]
+            },
+            {
+                "title": "Error Handling",
+                "id": "error-handling",
+                "contents": [
+                    "Handling Errors in Streaming",
+                    "Here\u2019s an example of how to handle errors gracefully in a Python streaming request:"
+                ]
+            },
+            {
+                "title": "Rate Limits",
+                "id": "rate-limits",
+                "contents": [
+                    "Monitoring Rate Limits",
+                    "To avoid hitting rate limits, you can monitor your usage and implement backoff strategies. Here\u2019s an example in Node.js:"
+                ]
+            }
+        ]
+    },
+    {
+        "title": "`",
+        "id": "sdk",
+        "mainUrl": "/docs/api-reference/sdk",
+        "sections": [
+            {
+                "title": "Python SDK ",
+                "id": "python-sdk-api",
+                "contents": [
+                    "Python SDK",
+                    "The official Alleai Python SDK provides a simple and intuitive interface for interacting with the API. Here\u2019s how to get started:"
+                ]
+            },
+            {
+                "title": "Node.js SDK",
+                "id": "nodejs-sdk-api",
+                "contents": [
+                    "Node.js SDK",
+                    "The official Alleai Node.js SDK is built for modern JavaScript and TypeScript applications. Here\u2019s how to use it:"
+                ]
+            },
+            {
+                "title": "Best Practices for Using SDKs",
+                "id": "best-practise-sdk",
+                "contents": [
+                    "Best Practices for Using SDKs",
+                    "To get the most out of the Alleai SDKs, follow these best practices:",
+                    "Environment Variables:Store your API key in environment variables to keep it secure and avoid hardcoding it in your application.",
+                    "Error Handling:Always wrap API calls in try-catch blocks to handle errors gracefully.",
+                    "TypeScript Support:If you're using Node.js, consider using TypeScript for better type safety and autocompletion.",
+                    "Keep SDKs Updated:Regularly update the SDKs to benefit from the latest features and bug fixes."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Chat-Endpoints",
+        "id": "chat-endpoints",
+        "mainUrl": "/docs/api-reference/chat-endpoints",
+        "sections": [
+            {
+                "title": "Chat Completion",
+                "id": "chat-chat-completion",
+                "contents": [
+                    "The Chat Completion endpoint is our unified gateway to multiple AI models including ChatGPT, Claude, Gemini, and more. This endpoint allows you to generate human-like text responses using state-of-the-art language models.",
+                    "Overview",
+                    "Access multiple AI models through a single endpoint. Choose from:",
+                    "OpenAI's ChatGPT (GPT-3.5, GPT-4)",
+                    "Anthropic's Claude",
+                    "Google's Gemini",
+                    "And more leading AI models"
+                ]
+            },
+            {
+                "title": "Completion Endpoints",
+                "id": "chat-completion-ends",
+                "contents": [
+                    "All completions API requests should be made to this URL using HTTPS."
+                ]
+            },
+            {
+                "title": "Completion Endpoints",
+                "id": "chat-completion-ends",
+                "contents": [
+                    "All completions API requests should be made to this URL using HTTPS."
+                ]
+            },
+            {
+                "title": "Request Parameters",
+                "id": "completion-params",
+                "contents": [
+                    "A list of AImodel namesthat will process your request. You can include options like 'gpt-4', 'deepseek-1', or 'claude-3.5-sonnet' to decide which models generate responses or handle tasks, based on what each one is good at.",
+                    "The full set of inputs and context for the models to work with. This includes optionalsystem instructionsto guide the models\u2019 behavior (like setting their role or tone),user inputssuch astextquestions, audio recordings, images, or videos for the models to respond to, and priorassistant responsesorganized by model name to keep the conversation flowing. Each message can contain content in formats liketext,audio URLs,image URLs, orvideo URLs, giving you flexibility in how you communicate with the models.",
+                    "Controls how the models deliver their output to you. You specify themain format\u2014whether you wanttext, anaudio URL, animage URL, or avideo URL\u2014and can optionally set different formats forspecific modelsif you\u2019re using more than one. This ensures the response matches what you need, tailored to each model\u2019s contribution.",
+                    "Lets you decide if the models can search the web to include up-to-date or outside information in their responses. Turn it on withtrueto broaden their knowledge, or keep it off withfalseto rely only on what the models already know.",
+                    "Configures how to get ashorter versionof the response, perfect for quick insights. You can choose theformat\u2014liketext,audio URL,image URL, orvideo URL\u2014and pick whichmodels(from your 'models' list) should create the summary, letting you customize how it\u2019s condensed and presented.",
+                    "Sets up how tomerge responsesfrom multiplemodelsinto one cohesive output. You define theformat\u2014text,audio URL,image URL, orvideo URL\u2014and select whichmodels\u2019 answers to blend, combining their strengths into a single result that suits your needs.",
+                    "Adjusts howcreativeorpredictablethe models\u2019 responses are. Use alower value(like 0.1) for straightforward, focused answers, or ahigher value(up to 1.0) for more imaginative or varied replies, depending on the tone you\u2019re aiming for.",
+                    "Caps thelengthof the response, measured insmall unitslike words or characters. Set a number to keep answersbriefor allow them to runlonger, giving you control over how much detail you get back.",
+                    "Shapes howvariedthe models\u2019 responses can be. Alower value(like 0.5) keeps answers focused on the most likely ideas, while ahigher value(up to 1.0) lets the models explore a wider range of possibilities, balancingfocuswithdiversity.",
+                    "Controls how much the modelsrepeatthemselves. Ahigher value(up to 2.0) pushes them to avoid reusing phrases or ideas, keeping thingsfresh, while a lower or negative value (down to -2.0) lets themrepeatmore if that\u2019s what you want.",
+                    "Influences whether the models stick to what\u2019s already been said or bring upnew topics. Ahigher value(up to 2.0) encourages fresh ideas, while a lower or negative value (down to -2.0) keeps them focused on thecurrent discussion.",
+                    "Determines if you get the responsebit by bitas it\u2019s being created (withtrue) orall at oncewhen it\u2019s finished (withfalse). Streaming is handy forreal-timeupdates, while waiting gives you the complete answer in one go.",
+                    "Addsextra detailsabout your request, like a uniquerequest ID, auser ID, or atimestamp. This is optional but useful for keeping track of requests or linking them to specific people or times.",
+                    "fine-tunessettings for individual models, overriding the general options. You can adjust things likesystem instructions,creativity level,response length, orrepetition controlsforspecific models(like 'gpt-4' or 'deepseek-1'), giving you precise control over each one\u2019s behavior."
+                ]
+            },
+            {
+                "title": "Request Headers",
+                "id": "request-headers-chat",
+                "contents": [
+                    "Request Headers"
+                ]
+            },
+            {
+                "title": "API Response Format",
+                "id": "response-format-chat",
+                "contents": [
+                    "Unique identifier for the response.",
+                    "Type of object returned (e.g., 'ai.comparison').",
+                    "Timestamp of when the response was created.",
+                    "List of models used in in API call.",
+                    "Array of responses from each model.",
+                    "Name of the model (e.g., 'gpt-4o', 'deepseek-r1').",
+                    "The response content from the model.",
+                    "Reason for stopping the response (e.g., 'stop').",
+                    "Token usage details for the response.",
+                    "API usage details.",
+                    "Total number of requests made.",
+                    "Number of API credits used.",
+                    "Total cost of the API usage."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Web-Search",
+        "id": "chat-search",
+        "mainUrl": "/docs/api-reference/chat-search",
+        "sections": [
+            {
+                "title": "Using Web-search in chat completions",
+                "id": "web-search-completions",
+                "contents": [
+                    "Usingweb_searchin Completion Endpoint"
+                ]
+            },
+            {
+                "title": "Web-search response body",
+                "id": "web-search-response",
+                "contents": [
+                    "Web Search Results",
+                    "If thewebsearchparameter was set totruein the API request, the response will include aweb_search_resultsfield. This field contains the results of web searches performed by the model to enhance its response."
+                ]
+            },
+            {
+                "title": "Web-search response body",
+                "id": "web-search-response",
+                "contents": [
+                    "Web Search Results",
+                    "If thewebsearchparameter was set totruein the API request, the response will include aweb_search_resultsfield. This field contains the results of web searches performed by the model to enhance its response."
+                ]
+            },
+            {
+                "title": "Web Search Endpoints",
+                "id": "web-search-endpoint",
+                "contents": [
+                    "Dedicated Web Search Endpoints"
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Model Output Comparison",
+        "id": "chat-comparison",
+        "mainUrl": "/docs/api-reference/chat-comparison",
+        "sections": [
+            {
+                "title": "Compare model responses",
+                "id": "compare-models",
+                "contents": [
+                    "Model OutputComparison"
+                ]
+            },
+            {
+                "title": "Model Output Comparison",
+                "id": "model-output-compare",
+                "contents": [
+                    "Thecomparisonfield is anoptionalparameter in the API request. Including this field enables the API to perform comparisons across different AI models and return the comparison results along with the regular model outputs. If thecomparisonfield is omitted, no model comparisons will be performed, and only the standard model outputs will be returned.",
+                    "If you include thecomparisonfield, it accepts an array of comparison objects, where each object defines a specific comparison type and the models to be included.",
+                    "Comparison Types",
+                    "Thetypefield specifies the type of comparison to be performed. The following types are currently supported:",
+                    "text: Compares the text output of the specified models.",
+                    "audio_url: Compares the audio content accessible at the provided URLs.",
+                    "Models - Format(Important)",
+                    "Themodelsfield is an array of strings. Each string specifies acombinationof models to be used in the comparison. Models within each string are joined together with plus signs (+). This indicates that the models will be used in a combined or ensemble manner for that specific comparison. For example:",
+                    "\"gpt-4o+deepseek-r1+claude-3.5-sonnet\": This specifies a comparison involving GPT-4, Deepseek, and Claude.",
+                    "\"selected_model_one+yet-another-model\": Another example with audio models.",
+                    "Each string in themodelsarray represents a distinct set of models to be usedtogetherin a single comparison. You can have multiple strings in themodelsarray if you want to compare different combinations of models for the same comparisontype."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Summarize response from multiple chat models",
+        "id": "chat-summary",
+        "mainUrl": "/docs/api-reference/chat-summary",
+        "sections": [
+            {
+                "title": "Summary in Completion Endpoint",
+                "id": "summary-completion",
+                "contents": [
+                    "Summaryin Completion Endpoint"
+                ]
+            },
+            {
+                "title": " Dedicated Summary Endpoints",
+                "id": "summary-endpoints",
+                "contents": [
+                    "Dedicated Summary Endpoints",
+                    "For a streamlinedsummarywithout individual model outputs, use the dedicatedsummaryendpoints at [baseUrl]/summary. These endpoints mirror the completion request structure usingmessagesfor your query,response_formatto define the output (text, audio URL, etc.), and settings liketemperaturefor fine-tuning but focus solely on deliveringsummaryresults from the models. Unlike the completion endpoint, you won't get per-model responses here; it's just the distilledsummary, ideal for scenarios where you want a lightweight, essential take without the extra detail."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Combine responses from chat models",
+        "id": "chat-combination",
+        "mainUrl": "/docs/api-reference/chat-combination",
+        "sections": [
+            {
+                "title": "Combinations in Completion Endpoint",
+                "id": "combination-completion",
+                "contents": [
+                    "Combinationsin Completion Endpoint"
+                ]
+            },
+            {
+                "title": " Dedicated Combination Endpoints",
+                "id": "combination-endpoints",
+                "contents": [
+                    "Dedicated Combination Endpoints",
+                    "For a focused result that skips individual model outputs, use the dedicatedcombinationendpoint at [baseUrl]/combinations. This endpoint mirrors the completion request body,messagesfor your query,response_formatfor output style, andtemperaturefor adjustments, but this only delivers the combined results from the models you specify. Using the samecombinationarray (e.g., \"combination\": [{\"type\": \"text\", \"models\": [\"gpt-4o+deepseek-r1+claude-3.5-sonnet\"]}, {\"type\": \"audio_url\", \"models\": [\"gpt-4o+claude-3.5-sonnet\"]}), you pick which models to blend with the + notation, and that's all you get back no separate responses. It's a clean, efficient way to get a synthesized output when you don't need the raw model-by-model breakdown."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Image Generation",
+        "id": "image-generation",
+        "mainUrl": "/docs/api-reference/image-generation",
+        "sections": [
+            {
+                "title": "Image Generation API",
+                "id": "image-generation-api",
+                "contents": [
+                    "Image Generation API",
+                    "Multi-Model Image Generation API",
+                    "Our Multi-Model Image Generation API allows developers to leverage multiple AI models simultaneously for image generation and editing tasks. This unique approach enables you to compare outputs across different models, provide users with diverse creative options, and select the best result for your specific use case.",
+                    "The API supports two primary operations:",
+                    "Text-to-Image Generation :Create images from text prompts across multiple models.",
+                    "Image Editing :Modify existing images using text instructions across multiple models.",
+                    "This documentation provides detailed information about endpoints, request formats, response structures, and code examples to help you integrate these capabilities into your applications.",
+                    "Authentication",
+                    "All API requests require authentication using an API key.",
+                    "You can obtain an API key byregistering for an accountand navigating to the API Keys section in your dashboard.",
+                    "Authentication",
+                    "All API requests require authentication using an API key.",
+                    "You can obtain an API key byregistering for an accountand navigating to the API Keys section in your dashboard."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Text-to-Image API",
+        "id": "image-generation",
+        "mainUrl": "/docs/api-reference/image-generation",
+        "sections": [
+            {
+                "title": "Generate Images from Text",
+                "id": "text-to-image-api",
+                "contents": [
+                    "Text-to-Image API",
+                    "The Text-to-Image API transforms text descriptions into visual imagery using multiple AI models simultaneously. This parallel approach allows you to:",
+                    "Compare stylistic differences between models",
+                    "Offer diverse creative options to your users",
+                    "Experiment with prompt engineering across different model architectures",
+                    "Select the most suitable output for your specific needs",
+                    "Request Body",
+                    "An array of selected image models for the API call.",
+                    "A text description of the desired image(s).",
+                    "The width of the generated image in pixels. Optional.",
+                    "The height of the generated image in pixels. Optional.",
+                    "The number of images to generate. Optional.",
+                    "The style of the generated image. Optional.",
+                    "A text description of elements to exclude from the image. Optional.",
+                    "A seed value for reproducible image generation. Optional.",
+                    "A value controlling the influence of the prompt on the image generation. Optional.",
+                    "The quality of the generated image. Either 'standard' or 'hd'. Defaults to 'standard'.",
+                    "The file format of the generated image. Either 'png', 'jpg', or 'webp'. Optional."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Edit Images via API",
+        "id": "image-generation-edits",
+        "mainUrl": "/docs/api-reference/image-generation-edits",
+        "sections": [
+            {
+                "title": "Create image edits",
+                "id": "image-edits-api",
+                "contents": [
+                    "Create image edits",
+                    "Creates, edits or extended image given an original image and a prompt.",
+                    "Request body",
+                    "An array of models to use for image editing.",
+                    "Specifies the input type: 'imageUrl' for a URL or 'file' for a local file upload.",
+                    "base64-encoded string or a web URL pointing to the image to edit.",
+                    "A text description of the desired edit. Maximum length is 1000 characters.",
+                    "The path to an optional mask file defining editable areas. If omitted, transparency in the image may be used as the mask.",
+                    "The strength of the edit effect, typically between 0 and 1. Optional.",
+                    "Whether to preserve the original image colors during editing. Optional.",
+                    "The number of edited outputs to generate. Optional.",
+                    "The style to apply to the edited image. Optional.",
+                    "A description of elements to avoid in the edit. Optional.",
+                    "The file format of the edited image. Optional, defaults to implementation-specific.",
+                    "The quality of the edited image: 'standard' or 'hd'. Optional, defaults to 'standard'."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Audio Generation API",
+        "id": "audio-text-to-speech",
+        "mainUrl": "/docs/api-reference/audio-text-to-speech",
+        "sections": [
+            {
+                "title": "Audio Generation API",
+                "id": "audio-generation-api",
+                "contents": [
+                    "Audio Generation API",
+                    "Learn how to turn audio into text or text into audio by combining multiple audio models.",
+                    "The API supports three primary operations:",
+                    "Create speech :Generates audio from the input text.",
+                    "Create transcription :Transcribes audio into the input language.",
+                    "Create audio :Generate sounds, music, and other audio formats from text by combining power of multiple audio models",
+                    "Authentication",
+                    "All API requests require authentication using an API key.",
+                    "You can obtain an API key byregistering for an accountand navigating to the API Keys section in your dashboard.",
+                    "Authentication",
+                    "All API requests require authentication using an API key.",
+                    "You can obtain an API key byregistering for an accountand navigating to the API Keys section in your dashboard."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Text-to-Speech",
+        "id": "audio-text-to-speech",
+        "mainUrl": "/docs/api-reference/audio-text-to-speech",
+        "sections": [
+            {
+                "title": "Text-to-Speech API",
+                "id": "text-to-speech-api",
+                "contents": [
+                    "Generates audio from the input text with multiple audio models.",
+                    "Request Body",
+                    "Array of selected audio models for the text-to-speech API call.",
+                    "The text to generate audio for. Maximum length is 4096 characters.",
+                    "The ID of the voice to use for audio generation. Optional, defaults to a model-specific voice.",
+                    "The language code for the audio (e.g., 'en-US'). Optional.",
+                    "The speed of the generated audio. Ranges from 0.25 to 4.0. Defaults to 1.0.",
+                    "Voice pitch adjustment, ranging from -20 to 20. Optional.",
+                    "The audio output format. Supported values are 'mp3', 'wav', or 'ogg'. Optional.",
+                    "The quality of the generated audio: 'standard' or 'hd'. Optional, defaults to 'standard'.",
+                    "The emotional tone of the voice. Options are 'neutral', 'happy', 'sad', 'angry', or 'excited'. Optional.",
+                    "The volume level of the generated audio. Optional."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Speech-to-Text",
+        "id": "audio-speech-to-text",
+        "mainUrl": "/docs/api-reference/audio-speech-to-text",
+        "sections": [
+            {
+                "title": "Speech-to-Text API",
+                "id": "speech-to-text-api",
+                "contents": [
+                    "Create transcription",
+                    "Transcribes audio into the input language.",
+                    "Request body",
+                    "Array of selected models for audio transcription.",
+                    "A base64-encoded string or a web URL pointing to the audio file to transcribe. Supported formats include flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.",
+                    "The source audio language (e.g., 'en-US'). Optional.",
+                    "Whether to include word-level timestamps in the transcription. Optional.",
+                    "Whether to enable speaker identification (diarization). Optional.",
+                    "Whether to filter inappropriate content from the transcription. Optional.",
+                    "The format of the transcription output. Options are 'json', 'text', 'srt', or 'vtt'. Optional.",
+                    "Whether to apply background noise filtering. Optional.",
+                    "Whether to automatically add punctuation to the transcription. Optional.",
+                    "The maximum number of speakers to identify during diarization. Optional."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Create audio",
+        "id": "audio-generate",
+        "mainUrl": "/docs/api-reference/audio-generate",
+        "sections": [
+            {
+                "title": "Audio Generation API",
+                "id": "audio-generate-api",
+                "contents": [
+                    "Create audio",
+                    "Generate all kinds of sound from supported AI modes",
+                    "Request body",
+                    "Array of selected audio models for generating audio from text.",
+                    "The text description to generate audio from. Maximum length is 4096 characters.",
+                    "The duration of the generated audio in seconds. Optional.",
+                    "The tempo of the generated audio in beats per minute (BPM). Optional.",
+                    "The musical genre for the generated audio (e.g., 'jazz', 'rock'). Optional.",
+                    "Array of instruments to include in the audio (e.g., 'piano', 'drums'). Optional.",
+                    "The quality of the generated audio: 'standard' or 'hd'. Optional, defaults to 'standard'.",
+                    "The audio output format. Supported values are 'mp3', 'wav', or 'ogg'. Optional.",
+                    "Whether the generated audio should be loopable. Optional.",
+                    "The mood of the generated audio (e.g., 'happy', 'calm'). Optional.",
+                    "The volume level of the generated audio. Optional."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Text-to-Video",
+        "id": "video-generation",
+        "mainUrl": "/docs/api-reference/video-generation",
+        "sections": [
+            {
+                "title": "Text-to-video API",
+                "id": "text-to-video-api",
+                "contents": [
+                    "Text-to-Video API",
+                    "Generates videos from the input text with multiple video models.",
+                    "Request Body",
+                    "Array of selected models for generating video from text.",
+                    "The text description to generate video from. Maximum length is 4096 characters.",
+                    "The output video format. Supported values are 'mp4' or 'mov'. Optional.",
+                    "The duration of the generated video in seconds. Optional.",
+                    "The aspect ratio of the video (e.g., '16:9', '4:3'). Optional."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Edit Video with multiple models",
+        "id": "video-generation-edits",
+        "mainUrl": "/docs/api-reference/video-generation-edits",
+        "sections": [
+            {
+                "title": "Edit Video API",
+                "id": "edit-video-api",
+                "contents": [
+                    "Edit Video",
+                    "Edit a video content base on description prompt.",
+                    "Request body",
+                    "Array of selected models for video editing.",
+                    "The text description to guide the video editing process.",
+                    "A base64-encoded string or a web URL pointing to the video file to edit."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Error Handling",
+        "id": "error-handling",
+        "mainUrl": "/docs/api-reference/error-handling",
+        "sections": [
+            {
+                "title": "Error Handling with our SDK",
+                "id": "error-handling",
+                "contents": [
+                    "Our SDK provides comprehensive error handling capabilities to help you build robust applications. This guide covers common error scenarios and best practices for handling them effectively.",
+                    "Error Types",
+                    "APIError:Base error class for all API-related errors. Includes status code and detailed error message.",
+                    "RateLimitError:Thrown when you exceed the rate limits for your tier. Includes retry-after information.",
+                    "AuthError:Authentication-related errors (invalid API key, expired tokens, etc).",
+                    "ValidationError:Invalid input parameters or request format.",
+                    "Implementation Examples",
+                    "Python",
+                    "Example showing comprehensive error handling in Python with retry logic:",
+                    "Node.js",
+                    "Equivalent implementation in Node.js:",
+                    "Best Practices",
+                    "Implement Retry Logic:Use exponential backoff for rate limits and transient failures. Start with a small delay and increase it with each retry.",
+                    "Handle Specific Errors:Catch and handle specific error types differently. For example, retry on rate limits but fail fast on validation errors.",
+                    "Log Errors Properly:Include relevant context in error logs (request ID, timestamps, etc). Use appropriate logging levels for different error types.",
+                    "Graceful Degradation:Have fallback strategies for when services are unavailable. Consider implementing circuit breakers for critical systems."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "File uploads",
+        "id": "upload-files",
+        "mainUrl": "/docs/api-reference/upload-files",
+        "sections": [
+            {
+                "title": "Adding File Inputs to Your API Request",
+                "id": "file-inputs",
+                "contents": [
+                    "When working with our API endpoints that require file inputs, you have two options for providing files:",
+                    "URL link to the file hosted online",
+                    "Base64 encoded string of the file content",
+                    "Below are examples demonstrating how to handle file uploads using base64 encoding in both Python and Node.js. The examples show how to read a local file, convert it to base64, and send it to our API."
+                ]
+            },
+            {
+                "title": "Include files via our Python sdk",
+                "id": "file-upload-python",
+                "contents": [
+                    "Python Example",
+                    "This example shows how to read an image file, convert it to base64, and use it with our image editing endpoint:"
+                ]
+            },
+            {
+                "title": "Include files via our node.js sdk",
+                "id": "file-upload-nodejs",
+                "contents": [
+                    "Node.js Example",
+                    "Here's how to achieve the same functionality using Node.js:"
+                ]
+            },
+            {
+                "title": "Supported file types",
+                "id": "upload-limits",
+                "contents": [
+                    "Important Notes",
+                    "Maximum file size limit: 10MB for base64 encoded files",
+                    "Supported file formats depend on the specific endpoint being used",
+                    "When using URLs, make sure they are publicly accessible",
+                    "Base64 strings should not include the data URI prefix (e.g., \"data:image/jpeg;base64,\")"
+                ]
+            }
+        ]
+    }
+]

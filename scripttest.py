@@ -17,7 +17,7 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 urls = [
     "http://localhost:3000/docs/api-reference/introduction",
     "http://localhost:3000/docs/api-reference/error-handling",
-    "http://localhost:3000/docs/api-reference/upload-files"
+    
 ]
 
 # Root URL for constructing mainUrl

@@ -39,9 +39,7 @@
                 "id": "api-keys",
                 "contents": [
                     "API Keys",
-                    "Authenticate using API keys scoped to projects (recommended) or legacy user keys.",
-                    "Project keys:Restricted to a single project (secure by default).",
-                    "User keys:Access all projects/organizations (deprecated; migrate to project keys)."
+                    "Our API uses API key authentication to secure access to all endpoints. You must include a valid API key in every request to authenticate your identity and ensure authorized access."
                 ]
             },
             {
@@ -55,8 +53,8 @@
                 "title": "Authenticated Requests",
                 "id": "authenticated-requests",
                 "contents": [
-                    "Making authenticated requests",
-                    "Authentication to the API is performed via HTTP Bearer authentication. Provide your API key as the Bearer token value in the Authorization header."
+                    "Using the API Key",
+                    "Include your API key in the X-API-Key header as follows:"
                 ]
             }
         ]
@@ -80,71 +78,6 @@
                 "contents": [
                     "Using the Alle-AI Node.js Package",
                     "Example of initializing the Alle-AI client in Node.js:"
-                ]
-            }
-        ]
-    },
-    {
-        "title": "Streaming",
-        "id": "streaming",
-        "mainUrl": "/docs/api-reference/streaming",
-        "sections": [
-            {
-                "title": "Streaming Overview",
-                "id": "streaming-overview",
-                "contents": [
-                    "The Alleai API provides the ability to stream responses back to a client in order to allow partial results for certain requests. To achieve this, we follow the Server-sent events standard. Our official Node and Python libraries include helpers to make parsing these events simpler."
-                ]
-            },
-            {
-                "title": "Chat Completions",
-                "id": "chat-completions",
-                "contents": [
-                    "Streaming is supported for both the Chat Completions API and the Assistants API. This section focuses on how streaming works for Chat Completions. Learn more about how streaming works in the Assistants API here.",
-                    "Streaming in Python",
-                    "In Python, a streaming request looks like:"
-                ]
-            },
-            {
-                "title": "Node.js Streaming",
-                "id": "nodejs-streaming",
-                "contents": [
-                    "Streaming in Node.js / TypeScript",
-                    "In Node.js / TypeScript, a streaming request looks like:"
-                ]
-            },
-            {
-                "title": "Best Practices",
-                "id": "best-practices",
-                "contents": [
-                    "Best Practices for Streaming",
-                    "When working with streaming in the Alleai API, consider the following best practices to ensure a smooth and efficient implementation:"
-                ]
-            },
-            {
-                "title": "Streaming Tips",
-                "id": "streaming-tips",
-                "contents": [
-                    "Use Client Libraries:Always prefer using the official Alleai client libraries for Python and Node.js, as they handle Server-sent events parsing and connection management for you.",
-                    "Handle Errors Gracefully:Streaming connections can fail due to network issues or timeouts. Implement retry logic and error handling to ensure robustness.",
-                    "Monitor Rate Limits:Streaming requests count toward your API rate limits. Monitor your usage to avoid exceeding limits and being throttled.",
-                    "Optimize for Latency:Streaming is ideal for reducing perceived latency in applications. Ensure your client-side logic is optimized to process and display chunks as they arrive."
-                ]
-            },
-            {
-                "title": "Error Handling",
-                "id": "error-handling",
-                "contents": [
-                    "Handling Errors in Streaming",
-                    "Here\u2019s an example of how to handle errors gracefully in a Python streaming request:"
-                ]
-            },
-            {
-                "title": "Rate Limits",
-                "id": "rate-limits",
-                "contents": [
-                    "Monitoring Rate Limits",
-                    "To avoid hitting rate limits, you can monitor your usage and implement backoff strategies. Here\u2019s an example in Node.js:"
                 ]
             }
         ]
@@ -221,19 +154,18 @@
                 "id": "completion-params",
                 "contents": [
                     "A list of AImodel namesthat will process your request. You can include options like 'gpt-4', 'deepseek-1', or 'claude-3.5-sonnet' to decide which models generate responses or handle tasks, based on what each one is good at.",
-                    "The full set of inputs and context for the models to work with. This includes optionalsystem instructionsto guide the models\u2019 behavior (like setting their role or tone),user inputssuch astextquestions, audio recordings, images, or videos for the models to respond to, and priorassistant responsesorganized by model name to keep the conversation flowing. Each message can contain content in formats liketext,audio URLs,image URLs, orvideo URLs, giving you flexibility in how you communicate with the models.",
-                    "Controls how the models deliver their output to you. You specify themain format\u2014whether you wanttext, anaudio URL, animage URL, or avideo URL\u2014and can optionally set different formats forspecific modelsif you\u2019re using more than one. This ensures the response matches what you need, tailored to each model\u2019s contribution.",
+                    "The full set of inputs and context for the models to work with. This includes optionalsystem instructionsto guide the models' behavior (like setting their role or tone),user inputssuch astextquestions, audio recordings, images, or videos for the models to respond to, and priorassistant responsesorganized by model name to keep the conversation flowing. Each message can contain content in formats liketext,audio URLs,image URLs, orvideo URLs, giving you flexibility in how you communicate with the models.",
+                    "Controls how the models deliver their output to you. You specify themain format\u2014whether you wanttext, anaudio URL, animage URL, or avideo URL\u2014and can optionally set different formats forspecific modelsif you're using more than one. This ensures the response matches what you need, tailored to each model's contribution.",
                     "Lets you decide if the models can search the web to include up-to-date or outside information in their responses. Turn it on withtrueto broaden their knowledge, or keep it off withfalseto rely only on what the models already know.",
-                    "Configures how to get ashorter versionof the response, perfect for quick insights. You can choose theformat\u2014liketext,audio URL,image URL, orvideo URL\u2014and pick whichmodels(from your 'models' list) should create the summary, letting you customize how it\u2019s condensed and presented.",
-                    "Sets up how tomerge responsesfrom multiplemodelsinto one cohesive output. You define theformat\u2014text,audio URL,image URL, orvideo URL\u2014and select whichmodels\u2019 answers to blend, combining their strengths into a single result that suits your needs.",
-                    "Adjusts howcreativeorpredictablethe models\u2019 responses are. Use alower value(like 0.1) for straightforward, focused answers, or ahigher value(up to 1.0) for more imaginative or varied replies, depending on the tone you\u2019re aiming for.",
+                    "Configures how to get ashorter versionof the response, perfect for quick insights. You can choose theformat\u2014liketext,audio URL,image URL, orvideo URL\u2014and pick whichmodels(from your 'models' list) should create the summary, letting you customize how it's condensed and presented.",
+                    "Sets up how tomerge responsesfrom multiplemodelsinto one cohesive output. You define theformat\u2014text,audio URL,image URL, orvideo URL\u2014and select whichmodels' answers to blend, combining their strengths into a single result that suits your needs.",
+                    "Adjusts howcreativeorpredictablethe models' responses are. Use alower value(like 0.1) for straightforward, focused answers, or ahigher value(up to 1.0) for more imaginative or varied replies, depending on the tone you're aiming for.",
                     "Caps thelengthof the response, measured insmall unitslike words or characters. Set a number to keep answersbriefor allow them to runlonger, giving you control over how much detail you get back.",
-                    "Shapes howvariedthe models\u2019 responses can be. Alower value(like 0.5) keeps answers focused on the most likely ideas, while ahigher value(up to 1.0) lets the models explore a wider range of possibilities, balancingfocuswithdiversity.",
-                    "Controls how much the modelsrepeatthemselves. Ahigher value(up to 2.0) pushes them to avoid reusing phrases or ideas, keeping thingsfresh, while a lower or negative value (down to -2.0) lets themrepeatmore if that\u2019s what you want.",
-                    "Influences whether the models stick to what\u2019s already been said or bring upnew topics. Ahigher value(up to 2.0) encourages fresh ideas, while a lower or negative value (down to -2.0) keeps them focused on thecurrent discussion.",
-                    "Determines if you get the responsebit by bitas it\u2019s being created (withtrue) orall at oncewhen it\u2019s finished (withfalse). Streaming is handy forreal-timeupdates, while waiting gives you the complete answer in one go.",
-                    "Addsextra detailsabout your request, like a uniquerequest ID, auser ID, or atimestamp. This is optional but useful for keeping track of requests or linking them to specific people or times.",
-                    "fine-tunessettings for individual models, overriding the general options. You can adjust things likesystem instructions,creativity level,response length, orrepetition controlsforspecific models(like 'gpt-4' or 'deepseek-1'), giving you precise control over each one\u2019s behavior."
+                    "Shapes howvariedthe models' responses can be. Alower value(like 0.5) keeps answers focused on the most likely ideas, while ahigher value(up to 1.0) lets the models explore a wider range of possibilities, balancingfocuswithdiversity.",
+                    "Controls how much the modelsrepeatthemselves. Ahigher value(up to 2.0) pushes them to avoid reusing phrases or ideas, keeping thingsfresh, while a lower or negative value (down to -2.0) lets themrepeatmore if that's what you want.",
+                    "Influences whether the models stick to what's already been said or bring upnew topics. Ahigher value(up to 2.0) encourages fresh ideas, while a lower or negative value (down to -2.0) keeps them focused on thecurrent discussion.",
+                    "Determines if you get the responsebit by bitas it's being created (withtrue) orall at oncewhen it's finished (withfalse). Streaming is handy forreal-timeupdates, while waiting gives you the complete answer in one go.",
+                    "fine-tunessettings for individual models, overriding the general options. You can adjust things likesystem instructions,creativity level,response length, orrepetition controlsforspecific models(like 'gpt-4' or 'deepseek-1'), giving you precise control over each one's behavior."
                 ]
             },
             {
@@ -247,18 +179,26 @@
                 "title": "API Response Format",
                 "id": "response-format-chat",
                 "contents": [
+                    "Indicates if the API request was successful.",
+                    "Container for the main response data.",
                     "Unique identifier for the response.",
-                    "Type of object returned (e.g., 'ai.comparison').",
-                    "Timestamp of when the response was created.",
-                    "List of models used in in API call.",
-                    "Array of responses from each model.",
-                    "Name of the model (e.g., 'gpt-4o', 'deepseek-r1').",
+                    "Type of object returned (e.g., 'ai.completions').",
+                    "Information about when the response was created.",
+                    "Date and time when the response was created.",
+                    "Timezone for the creation timestamp.",
+                    "List of models used in the API call.",
+                    "Response content from each model, organized by model name.",
+                    "Response data for a specific model.",
+                    "Name of the model (e.g., 'gpt-4o', 'gemini-2-5-pro').",
                     "The response content from the model.",
-                    "Reason for stopping the response (e.g., 'stop').",
+                    "Reason for stopping the response (e.g., 'stop', 'STOP').",
                     "Token usage details for the response.",
-                    "API usage details.",
+                    "Model-specific API usage details.",
                     "Total number of requests made.",
-                    "Number of API credits used.",
+                    "Total cost for model usage.",
+                    "Overall API usage and cost details.",
+                    "Cost associated with input tokens.",
+                    "Cost associated with output tokens.",
                     "Total cost of the API usage."
                 ]
             }
@@ -420,15 +360,11 @@
                     "Request Body",
                     "An array of selected image models for the API call.",
                     "A text description of the desired image(s).",
-                    "The width of the generated image in pixels. Optional.",
-                    "The height of the generated image in pixels. Optional.",
                     "The number of images to generate. Optional.",
-                    "The style of the generated image. Optional.",
-                    "A text description of elements to exclude from the image. Optional.",
+                    "The height of the generated image in pixels. Optional.",
+                    "The width of the generated image in pixels. Optional.",
                     "A seed value for reproducible image generation. Optional.",
-                    "A value controlling the influence of the prompt on the image generation. Optional.",
-                    "The quality of the generated image. Either 'standard' or 'hd'. Defaults to 'standard'.",
-                    "The file format of the generated image. Either 'png', 'jpg', or 'webp'. Optional."
+                    "The style of the generated image. Optional."
                 ]
             }
         ]
@@ -446,17 +382,8 @@
                     "Creates, edits or extended image given an original image and a prompt.",
                     "Request body",
                     "An array of models to use for image editing.",
-                    "Specifies the input type: 'imageUrl' for a URL or 'file' for a local file upload.",
                     "base64-encoded string or a web URL pointing to the image to edit.",
-                    "A text description of the desired edit. Maximum length is 1000 characters.",
-                    "The path to an optional mask file defining editable areas. If omitted, transparency in the image may be used as the mask.",
-                    "The strength of the edit effect, typically between 0 and 1. Optional.",
-                    "Whether to preserve the original image colors during editing. Optional.",
-                    "The number of edited outputs to generate. Optional.",
-                    "The style to apply to the edited image. Optional.",
-                    "A description of elements to avoid in the edit. Optional.",
-                    "The file format of the edited image. Optional, defaults to implementation-specific.",
-                    "The quality of the edited image: 'standard' or 'hd'. Optional, defaults to 'standard'."
+                    "A text description of the desired edit. Maximum length is 1000 characters."
                 ]
             }
         ]
@@ -498,15 +425,9 @@
                     "Generates audio from the input text with multiple audio models.",
                     "Request Body",
                     "Array of selected audio models for the text-to-speech API call.",
-                    "The text to generate audio for. Maximum length is 4096 characters.",
-                    "The ID of the voice to use for audio generation. Optional, defaults to a model-specific voice.",
-                    "The language code for the audio (e.g., 'en-US'). Optional.",
-                    "The speed of the generated audio. Ranges from 0.25 to 4.0. Defaults to 1.0.",
-                    "Voice pitch adjustment, ranging from -20 to 20. Optional.",
-                    "The audio output format. Supported values are 'mp3', 'wav', or 'ogg'. Optional.",
-                    "The quality of the generated audio: 'standard' or 'hd'. Optional, defaults to 'standard'.",
-                    "The emotional tone of the voice. Options are 'neutral', 'happy', 'sad', 'angry', or 'excited'. Optional.",
-                    "The volume level of the generated audio. Optional."
+                    "The text to generate audio for.",
+                    "The voice to use for audio generation. Optional.",
+                    "Model-specific parameters for audio generation."
                 ]
             }
         ]
@@ -524,15 +445,8 @@
                     "Transcribes audio into the input language.",
                     "Request body",
                     "Array of selected models for audio transcription.",
-                    "A base64-encoded string or a web URL pointing to the audio file to transcribe. Supported formats include flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.",
-                    "The source audio language (e.g., 'en-US'). Optional.",
-                    "Whether to include word-level timestamps in the transcription. Optional.",
-                    "Whether to enable speaker identification (diarization). Optional.",
-                    "Whether to filter inappropriate content from the transcription. Optional.",
-                    "The format of the transcription output. Options are 'json', 'text', 'srt', or 'vtt'. Optional.",
-                    "Whether to apply background noise filtering. Optional.",
-                    "Whether to automatically add punctuation to the transcription. Optional.",
-                    "The maximum number of speakers to identify during diarization. Optional."
+                    "Path or a web URL pointing to the audio file to transcribe. Supported formats include flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.",
+                    "Model-specific parameters for audio transcription."
                 ]
             }
         ]
@@ -578,101 +492,19 @@
                     "Request Body",
                     "Array of selected models for generating video from text.",
                     "The text description to generate video from. Maximum length is 4096 characters.",
-                    "The output video format. Supported values are 'mp4' or 'mov'. Optional.",
                     "The duration of the generated video in seconds. Optional.",
-                    "The aspect ratio of the video (e.g., '16:9', '4:3'). Optional."
-                ]
-            }
-        ]
-    },
-    {
-        "title": "Edit Video with multiple models",
-        "id": "video-generation-edits",
-        "mainUrl": "/docs/api-reference/video-generation-edits",
-        "sections": [
-            {
-                "title": "Edit Video API",
-                "id": "edit-video-api",
-                "contents": [
-                    "Edit Video",
-                    "Edit a video content base on description prompt.",
-                    "Request body",
-                    "Array of selected models for video editing.",
-                    "The text description to guide the video editing process.",
-                    "A base64-encoded string or a web URL pointing to the video file to edit."
-                ]
-            }
-        ]
-    },
-    {
-        "title": "Error Handling",
-        "id": "error-handling",
-        "mainUrl": "/docs/api-reference/error-handling",
-        "sections": [
-            {
-                "title": "Error Handling with our SDK",
-                "id": "error-handling",
-                "contents": [
-                    "Our SDK provides comprehensive error handling capabilities to help you build robust applications. This guide covers common error scenarios and best practices for handling them effectively.",
-                    "Error Types",
-                    "APIError:Base error class for all API-related errors. Includes status code and detailed error message.",
-                    "RateLimitError:Thrown when you exceed the rate limits for your tier. Includes retry-after information.",
-                    "AuthError:Authentication-related errors (invalid API key, expired tokens, etc).",
-                    "ValidationError:Invalid input parameters or request format.",
-                    "Implementation Examples",
-                    "Python",
-                    "Example showing comprehensive error handling in Python with retry logic:",
-                    "Node.js",
-                    "Equivalent implementation in Node.js:",
-                    "Best Practices",
-                    "Implement Retry Logic:Use exponential backoff for rate limits and transient failures. Start with a small delay and increase it with each retry.",
-                    "Handle Specific Errors:Catch and handle specific error types differently. For example, retry on rate limits but fail fast on validation errors.",
-                    "Log Errors Properly:Include relevant context in error logs (request ID, timestamps, etc). Use appropriate logging levels for different error types.",
-                    "Graceful Degradation:Have fallback strategies for when services are unavailable. Consider implementing circuit breakers for critical systems."
-                ]
-            }
-        ]
-    },
-    {
-        "title": "File uploads",
-        "id": "upload-files",
-        "mainUrl": "/docs/api-reference/upload-files",
-        "sections": [
-            {
-                "title": "Adding File Inputs to Your API Request",
-                "id": "file-inputs",
-                "contents": [
-                    "When working with our API endpoints that require file inputs, you have two options for providing files:",
-                    "URL link to the file hosted online",
-                    "Base64 encoded string of the file content",
-                    "Below are examples demonstrating how to handle file uploads using base64 encoding in both Python and Node.js. The examples show how to read a local file, convert it to base64, and send it to our API."
-                ]
-            },
-            {
-                "title": "Include files via our Python sdk",
-                "id": "file-upload-python",
-                "contents": [
-                    "Python Example",
-                    "This example shows how to read an image file, convert it to base64, and use it with our image editing endpoint:"
-                ]
-            },
-            {
-                "title": "Include files via our node.js sdk",
-                "id": "file-upload-nodejs",
-                "contents": [
-                    "Node.js Example",
-                    "Here's how to achieve the same functionality using Node.js:"
-                ]
-            },
-            {
-                "title": "Supported file types",
-                "id": "upload-limits",
-                "contents": [
-                    "Important Notes",
-                    "Maximum file size limit: 10MB for base64 encoded files",
-                    "Supported file formats depend on the specific endpoint being used",
-                    "When using URLs, make sure they are publicly accessible",
-                    "Base64 strings should not include the data URI prefix (e.g., \"data:image/jpeg;base64,\")"
+                    "Whether the video should loop playback. Optional.",
+                    "The aspect ratio of the video (e.g., '16:9', '4:3'). Optional.",
+                    "The frame rate of the video in frames per second. Optional.",
+                    "The pixel dimensions of the video (e.g., '1280x720'). Optional.",
+                    "The resolution quality of the video (e.g., '720p'). Optional.",
+                    "A seed value for reproducible video generation. Optional.",
+                    "Additional parameters specific to the selected models. Optional.",
+                    "Asynchronous Processing & Job Status",
+                    "Video generation is an asynchronous process and may take some time to complete depending on the complexity of your request. When you submit a video generation request, the API responds immediately with ajob_Id(orrequest_Id), indicating your request has been queued for processing.",
+                    "You can use thisrequest_Idto poll the status of your video generation by making a GET request to the status endpoint:",
+                    "The status endpoint will return the current state of your job, such asInProgressorCompleted. Once the job is completed, the response will include the generated video URL and related metadata.",
+                    "This approach allows you to efficiently manage long-running video generation tasks and retrieve results once processing is finished."
                 ]
             }
         ]
